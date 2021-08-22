@@ -20,7 +20,6 @@ sp = spotipy.Spotify(
 )
 user_id = sp.me()['id']
 
-
 BASE_URL = "https://www.billboard.com/charts/hot-100/"
 year = input("""Which year do you want to travel to? Enter the date in this format YYYY-MM-DD: """) 
 # get top 100 from selected year
@@ -48,5 +47,3 @@ playlist = sp.user_playlist_create(user=user_id, name=f"{year} Billboard 100",
 
 #Adding songs found into the new playlist
 sp.playlist_add_items(playlist_id=playlist["id"], items=song_uris)
-
-
